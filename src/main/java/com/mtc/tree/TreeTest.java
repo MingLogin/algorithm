@@ -24,7 +24,7 @@ public class TreeTest {
         preOrderTraveral(treeNode.rightChild);
     }
 
-    //中序遍
+    //中序遍历
 
     //构建二叉树
     private static TreeNode createBinaryTree(LinkedList<Integer> inputList) {
