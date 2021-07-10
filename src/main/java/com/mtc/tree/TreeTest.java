@@ -11,6 +11,9 @@ public class TreeTest {
         System.out.println("=========前序遍历");
         preOrderTraveral(node);
         System.out.println("=========中序遍历");
+        inOrderTraveral(node);
+        System.out.println("=========后序遍历");
+        postOrderTraveral(node);
         System.out.println(node);
     }
 
@@ -24,7 +27,27 @@ public class TreeTest {
         preOrderTraveral(treeNode.rightChild);
     }
 
-    //中序遍历
+    //中序遍历  左节点 根节点 右节点
+    private static void inOrderTraveral(TreeNode treeNode) {
+        if (treeNode == null) {
+            return;
+        }
+        inOrderTraveral(treeNode.leftChild);
+        System.out.println(treeNode.data);
+        inOrderTraveral(treeNode.rightChild);
+
+    }
+
+    //中序遍历  左节点  右节点 根节点
+    private static void postOrderTraveral(TreeNode treeNode) {
+        if (treeNode == null) {
+            return;
+        }
+        postOrderTraveral(treeNode.leftChild);
+        postOrderTraveral(treeNode.rightChild);
+        System.out.println(treeNode.data);
+
+    }
 
     //构建二叉树
     private static TreeNode createBinaryTree(LinkedList<Integer> inputList) {
